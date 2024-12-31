@@ -1,0 +1,53 @@
+import { KalturaObjectMetadata } from '../kaltura-object-base';
+import { KalturaStatsEventType } from './KalturaStatsEventType';
+import { KalturaStatsFeatureType } from './KalturaStatsFeatureType';
+import { KalturaObjectBase, KalturaObjectBaseArgs } from '../kaltura-object-base';
+export interface KalturaStatsEventArgs extends KalturaObjectBaseArgs {
+    clientVer?: string;
+    eventType?: KalturaStatsEventType;
+    eventTimestamp?: number;
+    sessionId?: string;
+    partnerId?: number;
+    entryId?: string;
+    uniqueViewer?: string;
+    widgetId?: string;
+    uiconfId?: number;
+    userId?: string;
+    currentPoint?: number;
+    duration?: number;
+    processDuration?: number;
+    controlId?: string;
+    seek?: boolean;
+    newPoint?: number;
+    referrer?: string;
+    isFirstInSession?: boolean;
+    applicationId?: string;
+    contextId?: number;
+    featureType?: KalturaStatsFeatureType;
+}
+export declare class KalturaStatsEvent extends KalturaObjectBase {
+    clientVer: string;
+    eventType: KalturaStatsEventType;
+    eventTimestamp: number;
+    sessionId: string;
+    partnerId: number;
+    entryId: string;
+    uniqueViewer: string;
+    widgetId: string;
+    uiconfId: number;
+    userId: string;
+    currentPoint: number;
+    duration: number;
+    readonly userIp: string;
+    processDuration: number;
+    controlId: string;
+    seek: boolean;
+    newPoint: number;
+    referrer: string;
+    isFirstInSession: boolean;
+    applicationId: string;
+    contextId: number;
+    featureType: KalturaStatsFeatureType;
+    constructor(data?: KalturaStatsEventArgs);
+    protected _getMetadata(): KalturaObjectMetadata;
+}

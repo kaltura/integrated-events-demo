@@ -1,0 +1,50 @@
+import { KalturaObjectMetadata } from '../kaltura-object-base';
+import { KalturaEntryDistributionStatus } from './KalturaEntryDistributionStatus';
+import { KalturaEntryDistributionSunStatus } from './KalturaEntryDistributionSunStatus';
+import { KalturaEntryDistributionFlag } from './KalturaEntryDistributionFlag';
+import { KalturaDistributionValidationError } from './KalturaDistributionValidationError';
+import { KalturaBatchJobErrorTypes } from './KalturaBatchJobErrorTypes';
+import { KalturaNullableBoolean } from './KalturaNullableBoolean';
+import { KalturaObjectBase, KalturaObjectBaseArgs } from '../kaltura-object-base';
+export interface KalturaEntryDistributionArgs extends KalturaObjectBaseArgs {
+    entryId?: string;
+    distributionProfileId?: number;
+    thumbAssetIds?: string;
+    flavorAssetIds?: string;
+    assetIds?: string;
+    sunrise?: Date;
+    sunset?: Date;
+    validationErrors?: KalturaDistributionValidationError[];
+}
+export declare class KalturaEntryDistribution extends KalturaObjectBase {
+    readonly id: number;
+    readonly createdAt: Date;
+    readonly updatedAt: Date;
+    readonly submittedAt: Date;
+    entryId: string;
+    readonly partnerId: number;
+    distributionProfileId: number;
+    readonly status: KalturaEntryDistributionStatus;
+    readonly sunStatus: KalturaEntryDistributionSunStatus;
+    readonly dirtyStatus: KalturaEntryDistributionFlag;
+    thumbAssetIds: string;
+    flavorAssetIds: string;
+    assetIds: string;
+    sunrise: Date;
+    sunset: Date;
+    readonly remoteId: string;
+    readonly plays: number;
+    readonly views: number;
+    validationErrors: KalturaDistributionValidationError[];
+    readonly errorType: KalturaBatchJobErrorTypes;
+    readonly errorNumber: number;
+    readonly errorDescription: string;
+    readonly hasSubmitResultsLog: KalturaNullableBoolean;
+    readonly hasSubmitSentDataLog: KalturaNullableBoolean;
+    readonly hasUpdateResultsLog: KalturaNullableBoolean;
+    readonly hasUpdateSentDataLog: KalturaNullableBoolean;
+    readonly hasDeleteResultsLog: KalturaNullableBoolean;
+    readonly hasDeleteSentDataLog: KalturaNullableBoolean;
+    constructor(data?: KalturaEntryDistributionArgs);
+    protected _getMetadata(): KalturaObjectMetadata;
+}

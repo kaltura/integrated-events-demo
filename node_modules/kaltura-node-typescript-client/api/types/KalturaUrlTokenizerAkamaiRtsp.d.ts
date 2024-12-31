@@ -1,0 +1,12 @@
+import { KalturaObjectMetadata } from '../kaltura-object-base';
+import { KalturaUrlTokenizer, KalturaUrlTokenizerArgs } from './KalturaUrlTokenizer';
+export interface KalturaUrlTokenizerAkamaiRtspArgs extends KalturaUrlTokenizerArgs {
+    host?: string;
+    cpcode?: number;
+}
+export declare class KalturaUrlTokenizerAkamaiRtsp extends KalturaUrlTokenizer {
+    host: string;
+    cpcode: number;
+    constructor(data?: KalturaUrlTokenizerAkamaiRtspArgs);
+    protected _getMetadata(): KalturaObjectMetadata;
+}

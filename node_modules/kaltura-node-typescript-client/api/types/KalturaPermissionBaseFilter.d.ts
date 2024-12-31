@@ -1,0 +1,50 @@
+import { KalturaObjectMetadata } from '../kaltura-object-base';
+import { KalturaPermissionType } from './KalturaPermissionType';
+import { KalturaPermissionStatus } from './KalturaPermissionStatus';
+import { KalturaRelatedFilter, KalturaRelatedFilterArgs } from './KalturaRelatedFilter';
+export interface KalturaPermissionBaseFilterArgs extends KalturaRelatedFilterArgs {
+    idEqual?: number;
+    idIn?: string;
+    typeEqual?: KalturaPermissionType;
+    typeIn?: string;
+    nameEqual?: string;
+    nameIn?: string;
+    friendlyNameLike?: string;
+    descriptionLike?: string;
+    statusEqual?: KalturaPermissionStatus;
+    statusIn?: string;
+    partnerIdEqual?: number;
+    partnerIdIn?: string;
+    dependsOnPermissionNamesMultiLikeOr?: string;
+    dependsOnPermissionNamesMultiLikeAnd?: string;
+    tagsMultiLikeOr?: string;
+    tagsMultiLikeAnd?: string;
+    createdAtGreaterThanOrEqual?: Date;
+    createdAtLessThanOrEqual?: Date;
+    updatedAtGreaterThanOrEqual?: Date;
+    updatedAtLessThanOrEqual?: Date;
+}
+export declare class KalturaPermissionBaseFilter extends KalturaRelatedFilter {
+    idEqual: number;
+    idIn: string;
+    typeEqual: KalturaPermissionType;
+    typeIn: string;
+    nameEqual: string;
+    nameIn: string;
+    friendlyNameLike: string;
+    descriptionLike: string;
+    statusEqual: KalturaPermissionStatus;
+    statusIn: string;
+    partnerIdEqual: number;
+    partnerIdIn: string;
+    dependsOnPermissionNamesMultiLikeOr: string;
+    dependsOnPermissionNamesMultiLikeAnd: string;
+    tagsMultiLikeOr: string;
+    tagsMultiLikeAnd: string;
+    createdAtGreaterThanOrEqual: Date;
+    createdAtLessThanOrEqual: Date;
+    updatedAtGreaterThanOrEqual: Date;
+    updatedAtLessThanOrEqual: Date;
+    constructor(data?: KalturaPermissionBaseFilterArgs);
+    protected _getMetadata(): KalturaObjectMetadata;
+}

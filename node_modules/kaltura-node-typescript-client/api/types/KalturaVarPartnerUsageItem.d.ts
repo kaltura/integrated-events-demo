@@ -1,0 +1,53 @@
+import { KalturaObjectMetadata } from '../kaltura-object-base';
+import { KalturaPartnerStatus } from './KalturaPartnerStatus';
+import { KalturaObjectBase, KalturaObjectBaseArgs } from '../kaltura-object-base';
+export interface KalturaVarPartnerUsageItemArgs extends KalturaObjectBaseArgs {
+    partnerId?: number;
+    partnerName?: string;
+    partnerStatus?: KalturaPartnerStatus;
+    partnerPackage?: number;
+    partnerCreatedAt?: number;
+    views?: number;
+    plays?: number;
+    entriesCount?: number;
+    totalEntriesCount?: number;
+    videoEntriesCount?: number;
+    imageEntriesCount?: number;
+    audioEntriesCount?: number;
+    mixEntriesCount?: number;
+    bandwidth?: number;
+    totalStorage?: number;
+    storage?: number;
+    deletedStorage?: number;
+    peakStorage?: number;
+    avgStorage?: number;
+    combinedStorageBandwidth?: number;
+    transcodingUsage?: number;
+    dateId?: string;
+}
+export declare class KalturaVarPartnerUsageItem extends KalturaObjectBase {
+    partnerId: number;
+    partnerName: string;
+    partnerStatus: KalturaPartnerStatus;
+    partnerPackage: number;
+    partnerCreatedAt: number;
+    views: number;
+    plays: number;
+    entriesCount: number;
+    totalEntriesCount: number;
+    videoEntriesCount: number;
+    imageEntriesCount: number;
+    audioEntriesCount: number;
+    mixEntriesCount: number;
+    bandwidth: number;
+    totalStorage: number;
+    storage: number;
+    deletedStorage: number;
+    peakStorage: number;
+    avgStorage: number;
+    combinedStorageBandwidth: number;
+    transcodingUsage: number;
+    dateId: string;
+    constructor(data?: KalturaVarPartnerUsageItemArgs);
+    protected _getMetadata(): KalturaObjectMetadata;
+}

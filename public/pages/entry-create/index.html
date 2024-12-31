@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../app.css" media="screen" />
+    <script type="module" src="app.js"></script>
+    <script src="../../app.js"></script>
+</head>
+
+<body style="display: flex;">
+    <!-- Left panel: Event List (30% width) -->
+    <div id="eventListContainer" style="width: 33%; border-right: 1px solid #ccc; padding: 10px;">
+        <button id="showEventsBtn" type="button">Show Events</button>
+        <h4>Event List - Click on Event to see relevant sessions</h4>
+        <ul id="eventList"></ul>
+    </div>
+
+    <!-- Middle panel: Logs (30% width) -->
+    <div id="logContainer" style="width:33%; margin-right: 20px;">
+        <button id="clearLogsBtn" type="button">Clear Logs</button>
+        <h4>Logs</h4>
+        <pre id="logOutput" style="overflow-y: auto; white-space: pre-wrap;"></pre>
+    </div>
+
+    <!-- Right panel: Forms (40% width) -->
+    <div id="allforms" style="width: 33%; display: flex;">
+        <div style="flex-grow: 1;">
+            <!-- Event creation form -->
+            <form id="eventForm">
+                <input type="text" id="eventName" required placeholder="Event Name">
+                <textarea id="eventDescription" placeholder="Event Description" required></textarea>
+                <div class="button-group">
+                    <button type="submit">Create Event</button>
+                </div>
+            </form>
+
+            <!-- Live session creation form -->
+            <form id="sessionForm">
+                <div>
+                    <input type="text" id="sessionName" name="sessionName" placeholder="Entry Name" required>
+                </div>
+                <div>
+                    <textarea id="sessionDescription" placeholder="Entry Description" required></textarea>
+                </div>
+                <div>
+                    <textarea id="sessionEventId" placeholder="Enter Event ID" required></textarea>
+                </div>
+                <div class="button-group" style="text-align: center;">
+                    <button type="submit">Create Live Entry</button>
+                </div>
+            </form>
+
+            <!-- Room creation form -->
+            <form id="roomForm">
+                <div>
+                    <input type="text" id="roomName" name="roomName" placeholder="Room Name" required>
+                </div>
+                <div>
+                    <input type="text" id="roomDesc" name="roomDesc" placeholder="Room Description" required>
+                </div>
+                <div>
+                    <input type="text" id="eventRoomId" name="eventRoomId" placeholder="Event ID" required>
+                </div>
+                <div>
+                    <input type="text" id="liveEntryIdInput" name="liveEntryIdInput" placeholder="Live Entry ID - ONLY FOR DIY">
+                </div>
+                <div class="button-group" style="text-align: center;">
+                    <button id="createRoomBtn" type="submit">Create Room</button>
+                </div>
+            </form>
+
+            <!-- Session details retrieval form -->
+            <form id="getSessionForm">
+                <div>
+                    <input type="text" id="sessionIdInput" name="sessionId" placeholder="Entry ID" required>
+                </div>
+                <div class="button-group" style="text-align: center;">
+                    <button id="getSessionBtn" type="submit">Get Entry Details</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for displaying sessions -->
+    <div id="modalDialog">
+        <div class="modal-content">
+            <h2 id="model-header">Sessions for Selected Event</h2>
+            <ul id="sessionList"></ul>
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:not(#\20):not(#\20):not(#\20) #kep-widget-1 * {
+  font-family: 'Lato', sans-serif !important;
+}
+.content {
+  position: relative;  
+  display: flex; 
+  flex-direction: row; 
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+}
+#sessionContainer {
+  display: flex;
+  flex: 1;
+  order: 1;
+  min-height: 480px;/*to keep reasonable size for mobile*/
+}
+#player-container {
+  width: 100%;  
+}
+#kme-parent-container {
+  width: 100%;
+}
+#kme-parent-container > iframe {
+  width: 100%;
+  height: 100%;
+  border-style: none;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+#chatContainer {
+  /*Salesforce specific color scheme */
+  background-color: black;
+  /**/
+  overflow: visible;
+  display: flex;
+  order: 2;   
+  max-height: 720px;
+}
+#cncChat {
+  display: flex;
+  order: 1;  
+  width: 325px;
+  overflow: auto;
+}
+#cncSidebar {
+  order: 2;
+  width: 75px;  
+  flex-direction: column;
+}
+#cncReactions {
+  height: 75px;
+  width: 75px;
+  flex: 1;
+}
+div.kep-actions-menu > div.kep-menu-item > button.kep-switch-button {
+  background: gray !important;
+}
+div.kep-actions-menu > div.kep-menu-item > button.kep-switch-button-checked {
+  background: green !important;
+}
+#liveReactions {
+  z-index: 100;
+}
+
+
+/* Responsive layout - moves chat below the player for smaller screens*/
+@media (max-width: 960px) {
+  /*wrap session and chat containers so chat will flow beneath*/
+  .content {
+    flex-direction: column;
+  }
+  #chatContainer {  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }  
+  #cncSidebar {
+    display: flex;
+    order: 1;
+    flex-direction: row;
+    height: 75px;
+    width: 100%;
+  }
+  #cncChat {
+    order: 2;
+    width: 100%;
+    height: 800px;
+  }
+  .kep-sidebar-buttons {
+    width: 100%;
+    flex-direction: row;
+  }
+  /*rotate the close chat button*/
+  .kep-close-widget-button > div > button {
+    transform: rotate(-180deg);
+  }
+  /*handle position of the options menu*/
+  .kep-actions-menu {
+    top: -190px;
+  }
+  /*move reactions buttons to the right side*/
+  #cncReactions {
+    order: 10;
+  }
+  
+}
+
+

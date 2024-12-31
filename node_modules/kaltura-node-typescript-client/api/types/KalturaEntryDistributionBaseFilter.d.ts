@@ -1,0 +1,50 @@
+import { KalturaObjectMetadata } from '../kaltura-object-base';
+import { KalturaEntryDistributionStatus } from './KalturaEntryDistributionStatus';
+import { KalturaEntryDistributionFlag } from './KalturaEntryDistributionFlag';
+import { KalturaRelatedFilter, KalturaRelatedFilterArgs } from './KalturaRelatedFilter';
+export interface KalturaEntryDistributionBaseFilterArgs extends KalturaRelatedFilterArgs {
+    idEqual?: number;
+    idIn?: string;
+    createdAtGreaterThanOrEqual?: Date;
+    createdAtLessThanOrEqual?: Date;
+    updatedAtGreaterThanOrEqual?: Date;
+    updatedAtLessThanOrEqual?: Date;
+    submittedAtGreaterThanOrEqual?: Date;
+    submittedAtLessThanOrEqual?: Date;
+    entryIdEqual?: string;
+    entryIdIn?: string;
+    distributionProfileIdEqual?: number;
+    distributionProfileIdIn?: string;
+    statusEqual?: KalturaEntryDistributionStatus;
+    statusIn?: string;
+    dirtyStatusEqual?: KalturaEntryDistributionFlag;
+    dirtyStatusIn?: string;
+    sunriseGreaterThanOrEqual?: Date;
+    sunriseLessThanOrEqual?: Date;
+    sunsetGreaterThanOrEqual?: Date;
+    sunsetLessThanOrEqual?: Date;
+}
+export declare class KalturaEntryDistributionBaseFilter extends KalturaRelatedFilter {
+    idEqual: number;
+    idIn: string;
+    createdAtGreaterThanOrEqual: Date;
+    createdAtLessThanOrEqual: Date;
+    updatedAtGreaterThanOrEqual: Date;
+    updatedAtLessThanOrEqual: Date;
+    submittedAtGreaterThanOrEqual: Date;
+    submittedAtLessThanOrEqual: Date;
+    entryIdEqual: string;
+    entryIdIn: string;
+    distributionProfileIdEqual: number;
+    distributionProfileIdIn: string;
+    statusEqual: KalturaEntryDistributionStatus;
+    statusIn: string;
+    dirtyStatusEqual: KalturaEntryDistributionFlag;
+    dirtyStatusIn: string;
+    sunriseGreaterThanOrEqual: Date;
+    sunriseLessThanOrEqual: Date;
+    sunsetGreaterThanOrEqual: Date;
+    sunsetLessThanOrEqual: Date;
+    constructor(data?: KalturaEntryDistributionBaseFilterArgs);
+    protected _getMetadata(): KalturaObjectMetadata;
+}

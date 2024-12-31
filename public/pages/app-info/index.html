@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../../app.css" media="screen" />
+</head>
+
+<body>
+    <div id="instructions-content">
+        <h1>About This App</h1>
+        <ul>
+          <li>This application is a client-side application (not server-side rendered)</li>
+          <li>It starts by making XHR call to get basic info like partner ID and uiconf IDs (player and CNC)</li>
+          <ul>
+            <li>Had this been a server-side-rendered page, these parameters could have been "burned" into the page on the server and save the XHR call</li>
+          </ul>
+          <li>The form allows you to input the user details, entry ID and virtual event ID</li>
+          <li>all form info gets stored in sessionStorage, so can be easily re-used</li>
+          <li>Click on "init data" to make an XHR call that will return</li>
+          <ul>
+            <li>user KS for player</li>
+            <li>JWT for CNC</li>
+            <li>entry object</li>
+            <li>KME room launch info, if applicable</li>
+          </ul>
+        </ul>
+      </div>
+</body>
+</html>
